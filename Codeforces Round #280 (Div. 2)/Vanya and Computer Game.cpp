@@ -1,4 +1,7 @@
-/* Question can be found at http://codeforces.com/contest/492/problem/D */
+/* Author: Utkarsh Pathrabe
+*  Question can be found at http://codeforces.com/contest/492/problem/D 
+*  Algorithms: Math, Sorting, Binary Search, Implementation
+*/
 
 #include <bits/stdc++.h>
 

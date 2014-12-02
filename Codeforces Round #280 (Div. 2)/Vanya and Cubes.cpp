@@ -1,4 +1,7 @@
-/* Question can be found at http://codeforces.com/contest/492/problem/A */
+/* Author: Utkarsh Pathrabe
+*  Question can be found at http://codeforces.com/contest/492/problem/A 
+*  Algorithms: Implementation Based
+*/
 
 #include <bits/stdc++.h>
 

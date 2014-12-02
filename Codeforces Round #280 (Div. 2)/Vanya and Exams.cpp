@@ -1,4 +1,7 @@
-/* Question can be found at http://codeforces.com/contest/492/problem/C */
+/* Author: Utkarsh Pathrabe
+*  Question can be found at http://codeforces.com/contest/492/problem/C 
+*  Algorithms: Greedy and Sorting
+*/
 
 #include <bits/stdc++.h>
 

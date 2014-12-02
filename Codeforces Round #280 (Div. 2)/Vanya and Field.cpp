@@ -1,4 +1,7 @@
-/* Question can be found at http://codeforces.com/contest/492/problem/E */
+/* Author: Utkarsh Pathrabe
+*  Question can be found at http://codeforces.com/contest/492/problem/E 
+*  Algorithms: Math
+*/
 
 #include <bits/stdc++.h>
 
