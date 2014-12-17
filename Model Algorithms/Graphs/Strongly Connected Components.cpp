@@ -4,13 +4,6 @@
 
 /* Time complexity: Theta(V + E) */
 
-/* STRONGLY-CONNECTED-COMPONENTS (G):
-*	1. Call DFS (G) to compute finishing times f[u] for each vertex u.
-*	2. Compute Tranpose of G :- GT.
-*	3. Call DFS (GT), but in the main loop of DFS, consider the vertices in order of decreasing f[u] (as computed in line 1).
-*	4. Output the vertices of each tree in the depth-first forest formed in line 3 as a separate strongly connected component.
-*/
-
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -129,5 +122,9 @@ int main (void) {
 		cin >> from >> to;
 	}while(from != -1);
 	SCC();
+	Node1.erase(Node1.begin(), Node1.end());
+	Node2.erase(Node2.begin(), Node2.end());
+	Edge1.erase(Edge1.begin(), Edge1.end());
+	Edge2.erase(Edge2.begin(), Edge2.end());
 	return 0;
 }

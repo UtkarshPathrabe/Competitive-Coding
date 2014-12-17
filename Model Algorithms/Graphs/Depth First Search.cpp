@@ -186,5 +186,8 @@ int main (void) {
 			TopologicalSort (from);
 		}
 	}
+	Node.erase(Node.begin(), Node.end());
+	Edge.erase(Edge.begin(), Edge.end());
+	Stack.erase(Stack.begin(), Stack.end());
 	return 0;
 }

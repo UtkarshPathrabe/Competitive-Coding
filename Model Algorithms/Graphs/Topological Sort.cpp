@@ -4,12 +4,6 @@
 
 /* Time complexity: Theta(V + E) */
 
-/* TOPOLOGICAL-SORT(G):
-*	1. Call DFS(G) to compute finishing times f[v] for each vertex v.
-*	2. As each vertex is finished, insert it onto the front of a linked list.
-*	3. Return the linked list of vertices.
-*/
-
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -76,5 +70,8 @@ int main (void) {
 		}
 	}
 	cout << endl;
+	Node.erase(Node.begin(), Node.end());
+	Edge.erase(Edge.begin(), Edge.end());
+	Queue.erase(Queue.begin(), Queue.end());
 	return 0;
 }

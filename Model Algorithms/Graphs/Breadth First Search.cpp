@@ -126,5 +126,7 @@ int main (void) {
 	cin >> to;
 	PrintPath(Node, from, to);
 	cout << endl;
+	Node.erase(Node.begin(), Node.end());
+	Edge.erase(Edge.begin(), Edge.end());
 	return 0;
 }
