@@ -2,6 +2,18 @@
 *  Algorithm: Kruskals Minimum Spanning Tree Algorithm
 */
 
+/* MST-KRUSKAL(G, w):
+*	1 A <- Empty
+*	2 for each vertex v belonging to V[G]
+*	3 		do MAKE-SET(v)
+*	4 sort the edges of E into nondecreasing order by weight w
+*	5 for each edge (u, v) belonging to E, taken in nondecreasing order by weight
+*	6 		do if FIND-SET(u) not equal to FIND-SET(v)
+*	7 			then A <- A union {(u, v)}
+*	8 				 UNION(u, v)
+*	9 return A
+*/
+
 /* Time Complexity: O(E*log(E)) or O(E*log(V)). Sorting of edges takes O(E*log(E)) time. After sorting, we iterate through all edges and apply find-union algorithm.
 *  The Find and Union operations can take atmost O(log(V)) time. So, overall complexity is O(E*log(E) + E*log(V)) time. The value of E can be atmost V^2, so O(log(V)) are O(log(E)) same.
 *  Therefore, overall time complexity is O(E*log(E)) or O(E*log(V)).
