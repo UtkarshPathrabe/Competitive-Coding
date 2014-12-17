@@ -47,14 +47,14 @@ Brief working:
 There are 3 trained models required for Audio to text translation:  
 1. <b>Language Model</b> -> It comprises of  
   * <i>Language Model</i>: Language model used is en-us.lm.dmp. It is created by 13000 words from WSJ (Wall Street Journal) text after pre-processing the text by converting numbers to words, short forms to full forms and punctuation marks being removed. .dmp format has data in binary format which makes loading of trained models very fast.  
-  * <i>Grammar Model</i>: Structure of words according to English grammar rules is specified in this model. E.g. (Good morning | Hello) (Bhiksha | Evandro | Paul | Philip | Rita | Will) implies that Good morning | Hello precedes Biksha | Evandro | Paul | Philip | Rita | Will. For the large vocabulary, the search space is configured differently. Grammars are not effective to describe very big word lists. Instead, n-gram language models are used. This is specified in alphabet.arpaformat file.  
+  * <i>Grammar Model</i>: Structure of words according to English grammar rules is specified in this model. E.g. (Good morning | Hello) (Bhiksha | Evandro | Paul | Philip | Rita | Will) implies that Good morning | Hello precedes Biksha | Evandro | Paul | Philip | Rita | Will. For the large vocabulary, the search space is configured differently. Grammars are not effective to describe very big word lists. Instead, n-gram language models are used. This is specified in alphabet.arpaformat file.
 2. <b>Dictionary Model</b> -> English language already has a carefully prepared language dictionary which is fine tuned for best performance. It comprises of alpha.dict, digits.dict and cmudict.0.6d files.  
   * <i>Alphabet Dictionary (alpha.dict)</i>: It comprises of letter as key and set of phonemes as the value corresponding to the key. There can be more than one phoneme for a particular letter.  
 E.g. (A EY), (B B I Y), (B (2) B IH)  
   * <i>Digit Dictionary (digits.dict)</i>: Digits are represented as text and not as numbers. Dictionary comprises of numbers as keys and corresponding set of phonemes as values. There can be more than one phoneme for a particular digit.  
 E.g. (ONE HH W AH N), (ONE (2) W AH N)  
   * <i>Word Dictionary (cmudict.0.6d)</i>: It comprises of a word as key and pronounced spelling of word as value. 13000 key value pairs are specified in cmudict.0.6d.  
-E.g. (ABRAMO AA B R AA M OW), (ACCENT AE K S EH N T)  
+E.g. (ABRAMO AA B R AA M OW), (ACCENT AE K S EH N T)
 3. <b>Acoustic Model</b> -> US English acoustic models for microphone is prepared using Wall Street Journal by varying number of senones, continuous/non-continuous attribute, HMM topology and number of gaussians per state. Acoustic model used for project is WSJ_8gau_13dCep_16k_40mel_130Hz_6800Hz which can be downloaded from [https://code.google.com/p/motenav/downloads/detail?name=WSJ_8gau_13dCep_16k_40mel_130Hz_6800Hz-1.12_r8.jar&can=2&q=]  
 
 ### Some Theory Behind The Recognition Process:  
