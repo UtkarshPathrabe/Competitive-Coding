@@ -45,6 +45,7 @@ Brief working:
 
 ### Trained Models Used:  
 There are 3 trained models required for Audio to text translation:  
+
 1. <b>Language Model</b> -> It comprises of  
   * <i>Language Model</i>: Language model used is en-us.lm.dmp. It is created by 13000 words from WSJ (Wall Street Journal) text after pre-processing the text by converting numbers to words, short forms to full forms and punctuation marks being removed. .dmp format has data in binary format which makes loading of trained models very fast.  
   * <i>Grammar Model</i>: Structure of words according to English grammar rules is specified in this model. E.g. (Good morning | Hello) (Bhiksha | Evandro | Paul | Philip | Rita | Will) implies that Good morning | Hello precedes Biksha | Evandro | Paul | Philip | Rita | Will. For the large vocabulary, the search space is configured differently. Grammars are not effective to describe very big word lists. Instead, n-gram language models are used. This is specified in alphabet.arpaformat file.
