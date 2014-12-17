@@ -58,28 +58,28 @@ E.g. (ONE HH W AH N), (ONE (2) W AH N)
   * <i>Word Dictionary (cmudict.0.6d)</i>: It comprises of a word as key and pronounced spelling of word as value. 13000 key value pairs are specified in cmudict.0.6d.  
 E.g. (ABRAMO AA B R AA M OW), (ACCENT AE K S EH N T)
 
-3. <b>Acoustic Model</b> -> US English acoustic models for microphone is prepared using Wall Street Journal by varying number of senones, continuous/non-continuous attribute, HMM topology and number of gaussians per state. Acoustic model used for project is WSJ_8gau_13dCep_16k_40mel_130Hz_6800Hz which can be downloaded from [https://code.google.com/p/motenav/downloads/detail?name=WSJ_8gau_13dCep_16k_40mel_130Hz_6800Hz-1.12_r8.jar&can=2&q=]  
+3. <b>Acoustic Model</b> -> US English acoustic models for microphone is prepared using Wall Street Journal by varying number of senones, continuous/non-continuous attribute, HMM topology and number of gaussians per state. Acoustic model used for project is WSJ_8gau_13dCep_16k_40mel_130Hz_6800Hz which can be downloaded from https://code.google.com/p/motenav/downloads/detail?name=WSJ_8gau_13dCep_16k_40mel_130Hz_6800Hz-1.12_r8.jar&can=2&q=  
 
 ### Some Theory Behind The Recognition Process:  
 Speech Recognition performed has the following components:  
-1. Classifying Audio segments to phonetic sounds in a language. The target set of phonetic sounds in a language are specified by the Acoustic model.  
-2. Combining phonetic sounds to words. This is done by using Dictionary model. HMM is used for time series analysis of phonetic sounds to recognize set of target words.  
-3. Forming sentence from words through semantic analysis. This is done using Language model. Every sequence of phonetic sounds can result in a set of words e.g. odyssey | ought to see | O to C, all these sounds similar, one may be more appropriate than another based on context.  
+* Classifying Audio segments to phonetic sounds in a language. The target set of phonetic sounds in a language are specified by the Acoustic model.  
+* Combining phonetic sounds to words. This is done by using Dictionary model. HMM is used for time series analysis of phonetic sounds to recognize set of target words.  
+* Forming sentence from words through semantic analysis. This is done using Language model. Every sequence of phonetic sounds can result in a set of words e.g. odyssey | ought to see | O to C, all these sounds similar, one may be more appropriate than another based on context.  
 ![Recognition of phonetic sounds called as phonemes into words.](https://github.com/UtkarshPathrabe/Competetive-Coding/blob/master/Abstract02.png)  
 Recognition of phonetic sounds called as phonemes into words.  
 Hidden Markov Models (HMMs) provide a simple and effective framework for modelling time-varying spectral vector sequences. As a consequence, almost all present day large vocabulary continuous speech recognition (LVCSR) systems are based on HMMs.  
 ![The Principal Components of a Large Vocabulary Continuous Speech Recogniser](https://github.com/UtkarshPathrabe/Competetive-Coding/blob/master/Abstract03.png)  
 The principal components of a large vocabulary continuous speech recogniser are illustrated in Figure above. The input audio waveform from a microphone is converted into a sequence of fixed size acoustic vectors in a process called feature extraction. The decoder then attempts to find the sequence of words which is most likely to have generated the feature vector. However, since P(word|Feature vector) is difficult to model directly, Bayes Rule is used.  
-The likelihood p(Feature vector|word) is determined by an acoustic model and the prior P(word) is determined by a language model. The basic unit of sound represented by the acoustic model is the phone. For example, the word "bat" is composed of three phonemes /b/ /ae/ /t/. About 40 such phonemes are required for English. For any given word, the corresponding acoustic model is synthesized by concatenating phoneme models to make words as defined by a pronunciation dictionary. The parameters of these phoneme models are estimated from training data consisting of speech waveforms and their transcriptions. The language model is typically an N-gram model in which the probability of each word is conditioned only on its N ??? 1 predecessors. The N-gram parameters are estimated by counting N-tuples in appropriate text corpora. The decoder operates by searching through all possible word sequences using pruning to remove unlikely hypotheses thereby keeping the search tractable. When the end of the utterance is reached, the most likely word sequence is output. Alternatively, modern decoders can generate lattices containing a compact representation of the most likely hypotheses.  
+The likelihood p(Feature vector|word) is determined by an acoustic model and the prior P(word) is determined by a language model. The basic unit of sound represented by the acoustic model is the phone. For example, the word "bat" is composed of three phonemes /b/ /ae/ /t/. About 40 such phonemes are required for English. For any given word, the corresponding acoustic model is synthesized by concatenating phoneme models to make words as defined by a pronunciation dictionary. The parameters of these phoneme models are estimated from training data consisting of speech waveforms and their transcriptions. The language model is typically an N-gram model in which the probability of each word is conditioned only on its N - 1 predecessors. The N-gram parameters are estimated by counting N-tuples in appropriate text corpora. The decoder operates by searching through all possible word sequences using pruning to remove unlikely hypotheses thereby keeping the search tractable. When the end of the utterance is reached, the most likely word sequence is output. Alternatively, modern decoders can generate lattices containing a compact representation of the most likely hypotheses.  
 
 ### Requirements For Running Programs:  
 1. Video to audio requires JAVE library, steps to set this up are:  
-  1. Download JAVE source 1.0.2 from [http://www.sauronsoftware.it/projects/jave/download.php] and add all JAVA classes in it to your eclipse package.  
+  1. Download JAVE source 1.0.2 from http://www.sauronsoftware.it/projects/jave/download.php and add all JAVA classes in it to your eclipse package.  
   2. Go to temp folder (start->run->(type) %temp%).  
   3. Create new folder jave-1.  
   4. Add ffmpeg application and pthreadGC2.dll to jave-1. Both files are found in java 1.0.2 folder.  
 2. Audio to text requires sphinx setup as follows:
-  1. Download sphinx4 from [http://sourceforge.net/projects/cmusphinx/files/sphinx4/5%20prealpha/].  
+  1. Download sphinx4 from http://sourceforge.net/projects/cmusphinx/files/sphinx4/5%20prealpha/  
   2. Go to `File > Import > Existing Project` into Workspace and choose the sphinx4 zip file downloaded in the previous step.  
   3. Right click on build.xml file in the project and choose run as Ant build.  
 In case of missing jar errors, add jar files manually from extracted content of sphinx4 zip folder.  
