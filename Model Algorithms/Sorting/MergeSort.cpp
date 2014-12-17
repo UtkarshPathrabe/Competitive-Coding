@@ -4,8 +4,8 @@
 
 using namespace std;
 
-vector<int> Array;
 int ArraySize = 0;
+vector<int> Array;
 
 void PrintArray(vector<int> &A) {
 	printf("The present ARRAY contents are:\n");
@@ -20,32 +20,40 @@ void AddElement(vector<int> &A, int key) {
 	ArraySize = A.size();
 }
 
-void Swap(int *i, int *j) {
-	int temp = *i;
-	*i = *j; 
-	*j = temp;
-}
-
-int Partition(vector<int> &A, int p, int r){
-	int i = (rand() % (r-p+1)) + p;
-	Swap(&A[i], &A[r]);
-	int key = A[r];
-	i = p-1;
-	for(int j = p; j < r; j++) {
-		if(A[j] <= key) {
+void Merge(vector<int> &A, int p, int q, int r) {						// Merge takes Theta(n) time.
+	int n1, n2, i, j, k;
+	vector<int> Left;
+	vector<int> Right;
+	n1 = q - p + 1;
+	n2 = r - q;
+	for (i = 0; i < n1; i++) {
+		Left.push_back(A[p + i]);
+	}
+	for (i = 0; i < n2; i++) {
+		Right.push_back(A[q + i + 1]);
+	}
+	Left.push_back(INT_MAX);
+	Right.push_back(INT_MAX);
+	i = 0;
+	j = 0;
+	for (k = p; k <= r; k++) {
+		if (Left[i] <= Right[j]) {
+			A[k] = Left[i];
 			i += 1;
-			Swap(&A[i], &A[j]);
+		} else {
+			A[k] = Right[j];
+			j += 1;
 		}
 	}
-	Swap(&A[i+1], &A[r]);
-	return i+1;
 }
 
-void QuickSort(vector<int> &A, int p, int r) {						// Worst Running Time O(n^2), Average Running Time O(n*lg(n)), Best Running Time O(n*lg(n)
-	if(p < r) {
-		int q = Partition(A, p, r);
-		QuickSort(A, p, q-1);
-		QuickSort(A, q+1, r);
+void MergeSort(vector<int> &A, int p, int r){							// Time Complexity Theta(n*log(n)) 
+	int q;
+	if (p < r) {
+		q = floor ((p + r) / 2);
+		MergeSort (A, p, q);
+		MergeSort (A, q + 1, r);
+		Merge (A, p, q, r);
 	}
 }
 
@@ -64,7 +72,7 @@ int main(void) {
 	AddElement(Array, 16);
 	AddElement(Array, 17);
 	PrintArray(Array);
-	QuickSort(Array, 0, ArraySize - 1);
+	MergeSort(Array, 0, ArraySize - 1);
 	PrintArray(Array);
 	return 0;
 }
