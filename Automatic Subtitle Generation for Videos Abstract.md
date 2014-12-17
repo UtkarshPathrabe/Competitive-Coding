@@ -10,10 +10,10 @@ Every time we watch a movie we have to search for  subtitles, download them and 
 ### Implementation Details:  
 
 #### Audio Extraction From Videos:  
-For creating subtitles/ captions for videos, we decided to use audio component from the videos due to the following reasons:  
+For creating subtitles/ captions for videos, we decided to use audio component from the videos due to the following reasons:
 1. Video may not give information relevant to making subtitles. Also the source of speech may not be in focus or video quality maybe bad for effective analysis. Audio gives much of the relevant information for making subtitles, robust to situations like source of speech out of video frame.  
-e.g. Background narrations.  
-2. Speech-to-text is a widely researched domain. Primarily applied in voice command control, there are many libraries and algorithms developed for this purpose. Hence there is good support for this process.  
+e.g. Background narrations.
+2. Speech-to-text is a widely researched domain. Primarily applied in voice command control, there are many libraries and algorithms developed for this purpose. Hence there is good support for this process.
 3. Audio data is much lesser than video data in complexity, hence this is simpler data giving more effective results.  
 We have used VLC media player's feature to extract the audio content of all supported video formats in the form of original audio or other audio formats (such as .flac & .wav). This can be done by using the GUI or VLC command line tool.  
 
@@ -23,7 +23,7 @@ There are several libraries providing functions for Speech-to-Text conversion. W
 #### Subtitle Generation From Text:  
 Once the captions/ subtitles are formed from analyzing the audio file, it is converted to a supported subtitle format (like .srt) for use. Dvd subtitle ripper, Xilisoft Dvd subtitle creator can be used to create subtitles from text. We also considered looking at the latest Sphinx version that has functionality for making subtitle and syncing it with the audio for better results.  
 
-### Brief Code Walkthrough:
+### Brief Code Walkthrough:  
 1. Extracting the audio from videos using JAVE. It is a Java library that is a wrapper around ffmpeg. VideoToAudio class handles the conversion process.  
 Brief working:  
   1. Open source and destination files.  
