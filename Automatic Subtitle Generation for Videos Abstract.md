@@ -10,11 +10,11 @@ Every time we watch a movie we have to search for  subtitles, download them and 
 ### Implementation Details:  
 
 #### Audio Extraction From Videos:  
-For creating subtitles/ captions for videos, we decided to use audio component from the videos due to the following reasons:
-1. Video may not give information relevant to making subtitles. Also the source of speech may not be in focus or video quality maybe bad for effective analysis. Audio gives much of the relevant information for making subtitles, robust to situations like source of speech out of video frame.  
-e.g. Background narrations.
-2. Speech-to-text is a widely researched domain. Primarily applied in voice command control, there are many libraries and algorithms developed for this purpose. Hence there is good support for this process.
-3. Audio data is much lesser than video data in complexity, hence this is simpler data giving more effective results.  
+For creating subtitles/ captions for videos, we decided to use audio component from the videos due to the following reasons:  
+* Video may not give information relevant to making subtitles. Also the source of speech may not be in focus or video quality maybe bad for effective analysis. Audio gives much of the relevant information for making subtitles, robust to situations like source of speech out of video frame.  
+e.g. Background narrations.  
+* Speech-to-text is a widely researched domain. Primarily applied in voice command control, there are many libraries and algorithms developed for this purpose. Hence there is good support for this process.  
+* Audio data is much lesser than video data in complexity, hence this is simpler data giving more effective results.  
 We have used VLC media player's feature to extract the audio content of all supported video formats in the form of original audio or other audio formats (such as .flac & .wav). This can be done by using the GUI or VLC command line tool.  
 
 #### Audio To Text Conversion:
