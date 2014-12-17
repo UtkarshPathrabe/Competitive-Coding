@@ -9,7 +9,7 @@
 *	4 sort the edges of E into nondecreasing order by weight w
 *	5 for each edge (u, v) belonging to E, taken in nondecreasing order by weight
 *	6 		do if FIND-SET(u) not equal to FIND-SET(v)
-*	7 			then A Å<- A union {(u, v)}
+*	7 			then A <- A union {(u, v)}
 *	8 				 UNION(u, v)
 *	9 return A
 */
