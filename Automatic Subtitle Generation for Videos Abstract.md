@@ -5,7 +5,7 @@ Automatic Subtitle Generation For Videos
 Every time we watch a movie we have to search for  subtitles, download them and add it manually to the video player. Further, if the sync and quality  aren't good, we have to repeat the process. And for other videos such as lectures, conference or informational talks we seldom find subtitles. If the subtitles can be made from the audio content of the videos, it will be very convenient for the users.  
 
 ### Process Flow:
-![Process Flow](https://github.com/UtkarshPathrabe/Machine-Learning-Assignments-BITS-Pilani/blob/master/Assignments/Machine%20Learning%20Assignment%201/Abstract01.png)  
+![Process Flow](https://github.com/UtkarshPathrabe/Competetive-Coding/blob/master/Abstract01.png)  
 
 ### Implementation Details:  
 
@@ -62,10 +62,10 @@ Speech Recognition performed has the following components:
 1. Classifying Audio segments to phonetic sounds in a language. The target set of phonetic sounds in a language are specified by the Acoustic model.  
 2. Combining phonetic sounds to words. This is done by using Dictionary model. HMM is used for time series analysis of phonetic sounds to recognize set of target words.  
 3. Forming sentence from words through semantic analysis. This is done using Language model. Every sequence of phonetic sounds can result in a set of words e.g. odyssey | ought to see | O to C, all these sounds similar, one may be more appropriate than another based on context.  
-![Recognition of phonetic sounds called as phonemes into words.](https://github.com/UtkarshPathrabe/Machine-Learning-Assignments-BITS-Pilani/blob/master/Assignments/Machine%20Learning%20Assignment%201/Abstract02.png)  
+![Recognition of phonetic sounds called as phonemes into words.](https://github.com/UtkarshPathrabe/Competetive-Coding/blob/master/Abstract02.png)  
 Recognition of phonetic sounds called as phonemes into words.  
 Hidden Markov Models (HMMs) provide a simple and effective framework for modelling time-varying spectral vector sequences. As a consequence, almost all present day large vocabulary continuous speech recognition (LVCSR) systems are based on HMMs.  
-![The Principal Components of a Large Vocabulary Continuous Speech Recogniser](https://github.com/UtkarshPathrabe/Machine-Learning-Assignments-BITS-Pilani/blob/master/Assignments/Machine%20Learning%20Assignment%201/Abstract03.png)  
+![The Principal Components of a Large Vocabulary Continuous Speech Recogniser](https://github.com/UtkarshPathrabe/Competetive-Coding/blob/master/Abstract03.png)  
 The principal components of a large vocabulary continuous speech recogniser are illustrated in Figure above. The input audio waveform from a microphone is converted into a sequence of fixed size acoustic vectors in a process called feature extraction. The decoder then attempts to find the sequence of words which is most likely to have generated the feature vector. However, since P(word|Feature vector) is difficult to model directly, Bayes Rule is used.  
 The likelihood p(Feature vector|word) is determined by an acoustic model and the prior P(word) is determined by a language model. The basic unit of sound represented by the acoustic model is the phone. For example, the word "bat" is composed of three phonemes /b/ /ae/ /t/. About 40 such phonemes are required for English. For any given word, the corresponding acoustic model is synthesized by concatenating phoneme models to make words as defined by a pronunciation dictionary. The parameters of these phoneme models are estimated from training data consisting of speech waveforms and their transcriptions. The language model is typically an N-gram model in which the probability of each word is conditioned only on its N ??? 1 predecessors. The N-gram parameters are estimated by counting N-tuples in appropriate text corpora. The decoder operates by searching through all possible word sequences using pruning to remove unlikely hypotheses thereby keeping the search tractable. When the end of the utterance is reached, the most likely word sequence is output. Alternatively, modern decoders can generate lattices containing a compact representation of the most likely hypotheses.  
 
