@@ -22,7 +22,7 @@ int UnboundedKnapSack (int value[], int n, int k) {
 }
 
 int main (void) {
-	int T, n, k, temp;
+	int T, n, k;
 	cin >> T;
 	while (T--) {
 		cin >> n >> k;
