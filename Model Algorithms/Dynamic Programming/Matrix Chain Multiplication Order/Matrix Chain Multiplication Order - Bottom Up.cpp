@@ -1,11 +1,3 @@
-/* Author: Utkarsh Ashok Pathrabe
-*  Problem Statement: Matrix Chain Multiplication Order
-*/
-
-/* Time Complexity: Omega(n^3)
-*  Space Complexity: Theta(n^2)
-*/
-
 #include <bits/stdc++.h>
 #define N 100
 
