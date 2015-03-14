@@ -2,38 +2,34 @@
 
 using namespace std;
 
-bool BSearch (unsigned long long int Fib[], int num, int start, int end) {
-	if (start <= end) {
-		int mid = (start + end) / 2;
-		if (num == Fib[mid]) {
+bool BSearch (long long int A[], int low, int high, long long int x) {
+	if (low <= high) {
+		int mid = (low + high) / 2;
+		if (A[mid] == x) {
 			return true;
-		} else if (num > Fib[mid]) {
-			return BSearch (Fib, num, mid + 1, end);
-		} else if (num < Fib[mid]) {
-			return BSearch (Fib, num, start, mid - 1);
+		} else if (A[mid] > x) {
+			return BSearch (A, low, mid - 1, x);
+		} else {
+			return BSearch (A, mid + 1, high, x);
 		}
 	}
 	return false;
 }
 
 int main (void) {
-	unsigned int T;
-	unsigned long long int N, Fibonacci[60];
-	Fibonacci[0] = 0;
-	Fibonacci[1] = 1;
+	long long int Fib[60] = {0}, N;
+	Fib[1] = 1; 
 	for (int i = 2; i < 60; i++) {
-		Fibonacci[i] = Fibonacci[i - 1] + Fibonacci[i - 2];
+		Fib[i] = Fib[i-1] + Fib[i-2];
 	}
-	//ifstream cin("ABC.txt");
-	//freopen ("Out.txt", "w", stdout);
+	int T;
 	cin >> T;
 	while (T--) {
 		cin >> N;
-		if (BSearch (Fibonacci, N, 0, 54)) {
+		if (BSearch (Fib, 0, 59, N))
 			cout << "IsFibo" << endl;
-		} else {
+		else
 			cout << "IsNotFibo" << endl;
-		}
 	}
 	return 0;
 }
