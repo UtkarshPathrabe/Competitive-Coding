@@ -1,3 +1,5 @@
+/* Time Complexity: O(V^3); Space Complexity: O(V^2) */
+
 #include <bits/stdc++.h>
 #define V	4
 #define INF	INT_MAX
@@ -40,7 +42,7 @@ int main (void) {
 					{INF,	0,	3,	INF},
 					{INF,	INF,	0,	1},
 					{INF,	INF,	INF,	0}};
-	int Distance[V][V];
+	int Distance[V][V] = {0};
 	FloydWarshall (Distance, Graph);
 	PrintSolution (Distance);
 	return 0;
