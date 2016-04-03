@@ -1,0 +1,4 @@
+import math
+a = float(raw_input())
+b = float(raw_input())
+print str(int(round(math.degrees(math.atan2(a, b))))) + '°'

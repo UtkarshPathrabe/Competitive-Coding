@@ -1,0 +1,16 @@
+string = raw_input()
+sub_string = raw_input()
+count = 0
+for i in range(0, len(string)):
+    j = 0
+    while j < len(sub_string):
+        if i+j < len(string):
+            if string[i+j] != sub_string[j]:
+                break
+            else:
+                j += 1
+        else:
+            break
+    if j == len(sub_string):
+        count += 1
+print count

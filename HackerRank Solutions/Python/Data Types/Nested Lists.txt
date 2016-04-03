@@ -1,0 +1,20 @@
+N = int(raw_input())
+students = []
+minimum_marks = 9999999
+second_minimum_marks = 9999999
+for i in range(0, N):
+    name = raw_input()
+    marks = float(raw_input())
+    students.append([name, marks])
+    if marks < minimum_marks:
+        second_minimum_marks = minimum_marks
+        minimum_marks = marks
+    elif marks < second_minimum_marks and marks != minimum_marks:
+        second_minimum_marks = marks
+output = []
+for student in students:
+    if student[1] == second_minimum_marks:
+        output.append(student[0])
+output.sort()
+for x in output:
+    print x

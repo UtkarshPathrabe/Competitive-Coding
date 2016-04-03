@@ -1,0 +1,12 @@
+N = int(raw_input())
+record = {}
+for i in range(0, N):
+    string = raw_input()
+    string_content = string.split()
+    name = string_content[0]
+    maths_marks = float(string_content[1])
+    physics_marks = float(string_content[2])
+    chemistry_marks = float(string_content[3])
+    record[name] = (maths_marks + physics_marks + chemistry_marks) / 3.0
+name_search = raw_input()
+print '{0:.2f}'.format(record[name_search])

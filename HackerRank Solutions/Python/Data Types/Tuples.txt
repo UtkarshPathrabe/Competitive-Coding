@@ -1,0 +1,4 @@
+N = int(raw_input())
+string_contents = raw_input().split()
+List = [int(x) for x in string_contents]
+print hash(tuple(List))

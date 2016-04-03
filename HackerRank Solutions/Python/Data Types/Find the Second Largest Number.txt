@@ -1,0 +1,9 @@
+N = int(raw_input())
+List = map(int, raw_input().split())
+List.sort()
+List.reverse()
+maximum_element = List[0]
+for x in range(1, len(List)):
+    if List[x] != maximum_element:
+        print List[x]
+        break

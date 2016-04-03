@@ -1,0 +1,3 @@
+N = int(raw_input())
+Set = set(map(int, raw_input().split()))
+print float(sum(Set))/float(len(Set))

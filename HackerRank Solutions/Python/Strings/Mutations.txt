@@ -1,0 +1,4 @@
+String = raw_input()
+List = raw_input().split()
+index = int(List[0])
+print String[:index] + List[1] + String[index+1:]

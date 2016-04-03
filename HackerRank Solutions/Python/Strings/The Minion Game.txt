@@ -1,0 +1,15 @@
+String = raw_input()
+vowels = 'AEIOU'
+kevin_score = 0
+stuart_score = 0
+for i in range(len(String)):
+    if String[i] in vowels:
+        kevin_score += (len(String) - i)
+    else:
+        stuart_score += (len(String) - i)
+if stuart_score > kevin_score:
+    print "Stuart " + str(stuart_score)
+elif stuart_score < kevin_score:
+    print "Kevin " + str(kevin_score)
+else:
+    print "Draw"

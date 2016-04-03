@@ -1,0 +1,11 @@
+n, m = map(int, raw_input().split())
+Array = map(int, raw_input().split())
+Set_A = set(map(int, raw_input().split()))
+Set_B = set(map(int, raw_input().split()))
+happiness_count = 0
+for i in Array:
+    if i in Set_A:
+        happiness_count += 1
+    elif i in Set_B:
+        happiness_count -= 1
+print happiness_count

@@ -1,0 +1,6 @@
+import string
+N = int(raw_input())
+width = 2 * ((2 * N) - 1) - 1
+alphabets = list(string.ascii_lowercase[:N])
+for i in range(-(N-1), N):
+    print '-'.join(alphabets[N-1:abs(i):-1] + [alphabets[abs(i)]] + alphabets[abs(i)+1:N]).center(width, '-')

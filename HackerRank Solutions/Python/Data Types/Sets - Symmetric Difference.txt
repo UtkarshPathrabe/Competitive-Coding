@@ -1,0 +1,8 @@
+M = int(raw_input())
+first_set = set(list(map(int, raw_input().split())))
+N = int(raw_input())
+second_set = set(list(map(int, raw_input().split())))
+symmetric_difference = list(first_set.difference(second_set).union(second_set.difference(first_set)))
+symmetric_difference.sort()
+for x in symmetric_difference:
+    print x

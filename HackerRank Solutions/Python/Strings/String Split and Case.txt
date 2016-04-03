@@ -1,0 +1,2 @@
+List = raw_input().split()
+print '-'.join(List)

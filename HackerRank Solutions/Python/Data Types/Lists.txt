@@ -1,0 +1,21 @@
+N = int(raw_input())
+List = []
+for i in range(0, N):
+    string = raw_input()
+    string_components = string.split()
+    if string_components[0] == 'print':
+        print str(List)
+    elif string_components[0] == 'append':
+        List.append(int(string_components[1]))
+    elif string_components[0] == 'extend':
+        List.extend(int(string_components[1]))
+    elif string_components[0] == 'insert':
+        List.insert(int(string_components[1]), int(string_components[2]))
+    elif string_components[0] == 'remove':
+        List.remove(int(string_components[1]))
+    elif string_components[0] == 'pop':
+        List.pop()
+    elif string_components[0] == 'sort':
+        List.sort()
+    elif string_components[0] == 'reverse':
+        List.reverse()

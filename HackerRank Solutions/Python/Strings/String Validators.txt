@@ -1,0 +1,17 @@
+String = raw_input()
+Output = [False, False, False, False, False]
+for i in range(len(String)):
+    if String[i].isalnum():
+        Output[0] = True
+    if String[i].isalpha():
+        Output[1] = True
+    if String[i].isdigit():
+        Output[2] = True
+    if String[i].islower():
+        Output[3] = True
+    if String[i].isupper():
+        Output[4] = True
+    if Output[0] and Output[1] and Output[2] and Output[3] and Output[4]:
+        break
+for output in Output:
+    print output
