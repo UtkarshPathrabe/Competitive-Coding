@@ -1,0 +1,5 @@
+N = int(raw_input())
+Set_A = set(map(int, raw_input().split()))
+M = int(raw_input())
+Set_B = set(map(int, raw_input().split()))
+print len(Set_A.symmetric_difference(Set_B))
