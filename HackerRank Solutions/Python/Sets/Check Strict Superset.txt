@@ -1,0 +1,8 @@
+A = set(raw_input().split())
+flag = True
+for i in range(int(raw_input())):
+    B = set(raw_input().split())
+    if not (A > B):
+        flag = False
+        break
+print flag
