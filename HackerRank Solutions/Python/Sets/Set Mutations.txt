@@ -1,0 +1,14 @@
+N = int(raw_input())
+Set_A = set(map(int, raw_input().split()))
+for i in range(int(raw_input())):
+    command_component = raw_input().split()
+    Set_B = set(map(int, raw_input().split()))
+    if command_component[0] == 'update':
+        Set_A.update(Set_B)
+    elif command_component[0] == 'intersection_update':
+        Set_A.intersection_update(Set_B)
+    elif command_component[0] == 'symmetric_difference_update':
+        Set_A.symmetric_difference_update(Set_B)
+    elif command_component[0] == 'difference_update':
+        Set_A.difference_update(Set_B)
+print sum(Set_A)

@@ -1,0 +1,11 @@
+n = int(raw_input())
+Set = set(map(int, raw_input().split())) 
+for i in range(0, int(raw_input())):
+    command_components = raw_input().split()
+    if command_components[0] == 'pop':
+        Set.pop()
+    elif command_components[0] == 'discard':
+        Set.discard(int(command_components[1]))
+    elif command_components[0] == 'remove':
+        Set.remove(int(command_components[1]))
+print sum(Set)

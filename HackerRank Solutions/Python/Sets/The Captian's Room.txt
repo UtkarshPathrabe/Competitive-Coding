@@ -1,0 +1,6 @@
+from collections import Counter
+N, count = int(raw_input()), Counter(map(int, raw_input().split()))
+for i in count.elements():
+    if count[i] == 1:
+        print i
+        break
