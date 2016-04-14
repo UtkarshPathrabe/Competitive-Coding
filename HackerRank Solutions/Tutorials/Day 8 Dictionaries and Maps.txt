@@ -1,0 +1,13 @@
+phoneBook = {}
+for x in range(int(raw_input())):
+    string_components = raw_input().split(' ')
+    phoneBook[string_components[0]] = string_components[1]
+while True:
+    try:
+        input = raw_input()
+    except EOFError:
+        break
+    if input in phoneBook.keys():
+        print input + '=' + phoneBook[input]
+    else:
+        print 'Not found'
