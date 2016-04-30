@@ -1,0 +1,5 @@
+List = map(int, list(raw_input()))
+key = int(raw_input().strip())
+for i in range(len(List)):
+    List[i] = (List[i] + key) % 10
+print ''.join(map(str, List))

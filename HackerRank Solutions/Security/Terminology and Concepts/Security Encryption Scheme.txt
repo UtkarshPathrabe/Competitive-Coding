@@ -1,0 +1,5 @@
+N = int(raw_input().strip())
+permute = 1
+for i in range(1, N+1):
+    permute *= i
+print permute

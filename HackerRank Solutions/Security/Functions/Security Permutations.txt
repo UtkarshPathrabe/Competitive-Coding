@@ -1,0 +1,7 @@
+N = int(raw_input().strip())
+line = map(int, raw_input().split())
+dict = {}
+for i in range(N):
+    dict[i+1] = line[i]
+for i in range(1, N+1):
+    print dict[dict[i]]
