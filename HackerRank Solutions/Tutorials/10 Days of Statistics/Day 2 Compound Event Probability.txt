@@ -1,0 +1,13 @@
+Probability of drawing red ball from Urn X = 4/7
+Probability of drawing black ball from Urn X = 3/7
+Probability of drawing red ball from Urn Y = 5/9
+Probability of drawing black ball from Urn Y = 4/9
+Probability of drawing red ball from Urn Z = 4/8
+Probability of drawing black ball from Urn Z = 4/8
+
+Probability of drawing 2 red bals and 1 black ball = P(red,red,black) + P(red,black,red) + P(black,red,red)
+Probability of drawing 2 red bals and 1 black ball = P(red ball from X)*P(red ball from Y)*P(black ball from Z) + P(red ball from X)*P(black ball from Y)*P(red ball from Z) + P(black ball from X)*P(red ball from Y)*P(red ball from Z)
+Probability of drawing 2 red bals and 1 black ball = (4/7)*(5/9)*(4/8) + (4/7)*(4/9)*(4/8) + (3/7)*(5/9)*(4/8)
+Probability of drawing 2 red bals and 1 black ball = (80/504) + (64/504) + (60/504)
+Probability of drawing 2 red bals and 1 black ball = (204/504)
+Probability of drawing 2 red bals and 1 black ball = 17/42
