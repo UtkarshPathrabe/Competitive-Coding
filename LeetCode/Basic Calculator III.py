@@ -1,8 +1,8 @@
 # BNF grammar
-# as := md {[+-] as}
-# md := unit {[*/] md}
-# unit := num | (as)
-# num := d+
+# as := md {[+-] md}
+# md := unit {[*/] unit}
+# unit := integer | (as)
+# integer := d+
 
 class Solution:
     def calculate(self, s: str) -> int:
