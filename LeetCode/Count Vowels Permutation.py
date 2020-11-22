@@ -6,13 +6,7 @@
 
 class Solution:
     def countVowelPermutation(self, n: int) -> int:
-        MOD, prev, curr = 1000000007, [1] * 5, [None] * 5
+        MOD, curr = 1000000007, [1] * 5
         for i in range(2, n + 1):
-            curr[0] = (prev[1] + prev[2] + prev[4]) % MOD
-            curr[1] = (prev[0] + prev[2]) % MOD
-            curr[2] = (prev[1] + prev[3]) % MOD
-            curr[3] = (prev[2]) % MOD
-            curr[4] = (prev[2] + prev[3]) % MOD
-            for i in range(5):
-                prev[i] = curr[i]
-        return sum(prev) % MOD
+            curr[0], curr[1], curr[2], curr[3], curr[4] = (curr[1] + curr[2] + curr[4]) % MOD, (curr[0] + curr[2]) % MOD, (curr[1] + curr[3]) % MOD, (curr[2]) % MOD, (curr[2] + curr[3]) % MOD
+        return sum(curr) % MOD
