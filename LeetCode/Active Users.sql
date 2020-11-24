@@ -1,0 +1,2 @@
+/* Write your PL/SQL query statement below */
+SELECT accounts.id id, accounts.name FROM Accounts accounts INNER JOIN (SELECT a.id FROM Logins a CROSS JOIN Logins b CROSS JOIN Logins c CROSS JOIN Logins d CROSS JOIN Logins e WHERE a.id = b.id AND b.id = c.id AND c.id = d.id AND d.id = e.id AND to_char(a.login_date + 1) = to_char(b.login_date) AND to_char(b.login_date + 1) = to_char(c.login_date) AND to_char(c.login_date + 1) = to_char(d.login_date) AND to_char(d.login_date + 1) = to_char(e.login_date) GROUP BY a.id) logs ON accounts.id = logs.id ORDER BY id;
