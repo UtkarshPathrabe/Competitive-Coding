@@ -1,7 +1,7 @@
 class MyQueue:
 
     def __init__(self):
-        self.stackA, self.stackB, self.front = deque([]), deque([]), None
+        self.stackA, self.stackB, self.front = [], [], None
 
     def push(self, x: int) -> None:
         if len(self.stackA) == 0:
