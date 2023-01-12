@@ -6,7 +6,6 @@ class Solution:
             graph[end].add(start)
         def dfs(node, parent):
             if node not in graph:
-                print(node, parent, 0, 'lol')
                 return 0
             totalTime, childTime = 0, 0
             for neighbour in graph[node]:
@@ -18,6 +17,5 @@ class Solution:
                 # independently.
                 if childTime > 0 or hasApple[neighbour]:
                     totalTime += (childTime + 2)
-            print(node, parent, totalTime)
             return totalTime
         return dfs(0, -1)
